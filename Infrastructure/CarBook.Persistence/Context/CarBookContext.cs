@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CarBook.Domain.Entities;
 
 namespace CarBook.Persistence.Context
 {
@@ -33,7 +34,8 @@ namespace CarBook.Persistence.Context
             modelBuilder.Entity<Service>().HasKey(service => service.ServiceId);
             modelBuilder.Entity<SocialMedia>().HasKey(socialMedia  => socialMedia.SocialMediaId);
             modelBuilder.Entity<Testimonial>().HasKey(testimonial => testimonial.TestimonialId);
-
+            modelBuilder.Entity<Author>().HasKey(author => author.AuthorId);
+            modelBuilder.Entity<Blog>().HasKey(blog => blog.BlogId);
         }
 
         public DbSet<About> Abouts { get; set; }
@@ -52,5 +54,7 @@ namespace CarBook.Persistence.Context
         public DbSet<Service> Services { get; set; }
         public DbSet<SocialMedia> SocialMedias { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
+        public DbSet<Author> Authors { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
     }
 }
